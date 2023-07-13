@@ -55,11 +55,7 @@ const inputElevation = document.querySelector('.form__input--elevation');
       return this.speed
     }
   }
-  // const rub1 = new Runinng([39,-12], 5.2, 24, 178)
-  // const cycling1 = new Cycling([39,-12], 27, 95, 523)
-  // console.log(rub1)
-  // console.log(cycling1)
-  ////////////////////////////////////
+
   // APPLICATION ARCHITECTURE
   class App{
     #map;
@@ -132,9 +128,6 @@ const inputElevation = document.querySelector('.form__input--elevation');
       if(type === 'running'){
         const cadence = +inputCadence.value
         if(
-        // !Number.isFinite(distance) ||
-        // !Number.isFinite(duration) ||
-        // !Number.isFinite(cadence))
         !validInputs(distance, duration, cadence) ||  !allPositive(distance, duration, cadence)
         )
         return  alert('Input has to be positive numberes')
@@ -157,7 +150,7 @@ const inputElevation = document.querySelector('.form__input--elevation');
       this._renderWorkout(workout)
 
       this._hideForm()
-     // const currcoords = mapEvent.latlng
+     
       this._setLocalStorage();
     }
     _renderWorkoutMarker(workout){
@@ -231,7 +224,7 @@ const inputElevation = document.querySelector('.form__input--elevation');
           duration: 1,
         }
       })
-      // workout.click();
+      
     }
     _setLocalStorage(){
       localStorage.setItem('workouts', JSON.stringify(this.#workouts))
